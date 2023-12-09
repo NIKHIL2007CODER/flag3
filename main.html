@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flag Capture</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+    <script src="player.js"></script>
+    <script src = "enemy.js"></script>
+</head>
+
+<body>
+
+    <a-scene id="scene" >
+      <a-assets>
+        <a-asset-item id = "gun" src = "assets/map/scene.gltf"></a-asset-item>
+        <a-asset-item id = "flag-blue" src = "assets/gun/scene.gltf"></a-asset-item>
+        <a-asset-item id = "enemy" src = "assets/player/scene.gltf"></a-asset-item>
+        <a-asset-item id = "flag-enemy" src = "assets/blue/scene.gltf"></a-asset-item>
+        <a-asset-item id = "player" src = "assets/red/scene.gltf"></a-asset-item>
+        <a-asset-item id = "sky" src = "assets/sky/scene.gltf"></a-asset-item>
+        <a-asset-item id = "bullet" src = "assets/7.62_mm_bullet/scene.gltf"></a-asset-item>
+        <a-asset-item id = "map" src = "assets/enemy/scene.gltf"></a-asset-item>
+      </a-assets>
+       
+
+        <a-entity environment = "preset:goldmine"></a-entity>
+        <a-entity camera position = "0 1.6 0" wasd-controls look-controls = "pointerLockEnabled :true">
+            <a-entity id = "char" gltf-model = "#player" position = "0 0 -3" scale = "200 200 200" rotation = "0 180 0" player-movement ></a-entity>
+        </a-entity>
+        <a-entity  enemies></a-entity>
+
+       <!-- 
+        contact, egypt, checkerboard, forest, goaland, yavapai, goldmine, threetowers, poison, arches, tron, japan, dream, volcano, starry, osiris, moon
+        
+        <a-entity camera position="0 -2 10" wasd-controls >
+        </a-entity>
+        <a-entity environment="skyType:gradient; preset:egypt; groundTexture:squares"></a-entity>
+        <a-box position="0 0 -3" color="cyan"></a-box>
+        -->
+    </a-scene>
+</body>
+
+</html>
